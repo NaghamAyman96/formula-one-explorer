@@ -1,54 +1,87 @@
-# React + TypeScript + Vite
+# 🏁 Formula One Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React + TypeScript application to explore Formula 1 seasons, races, and results. Built by **Nagham Ayman** as part of a take-home assignment.
 
-Currently, two official plugins are available:
+## 🔧 Tech Stack
+- React 18 + TypeScript
+- Vite for fast builds
+- React Router v6 for routing
+- Redux Toolkit for state management
+- Material UI for UI components
+- Recharts for data visualization
+- Jest + React Testing Library for unit tests
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clone the repository
+```bash
+git clone https://github.com/NaghamAyman96/formula-one-explorer.git
+cd formula-one-explorer
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 2. Install dependencies
+```bash
+npm install
 ```
+
+### 3. Start the development server
+```bash
+npm run dev
+```
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📁 Project Structure
+```
+src/
+├── App.tsx
+├── pages/
+│   ├── SeasonList.tsx
+│   ├── RaceList.tsx
+│   ├── RaceDetails.tsx
+│   ├── SeasonList.test.tsx
+│   ├── RaceList.test.tsx
+│   └── RaceDetails.test.tsx
+├── services/
+│   └── ergastApi.ts
+├── store/
+│   ├── index.ts
+│   └── pinnedSlice.ts
+├── setupTests.ts
+├── main.tsx
+```
+
+---
+
+## 🧪 Running Tests
+
+### 1. Run all tests
+```bash
+npm test
+```
+
+### 2. Included test coverage:
+- ✅ `RaceDetails.test.tsx`: Verifies table rendering + Recharts chart display.
+- ✅ `RaceList.test.tsx`: Ensures races render, pinning works.
+- ✅ `SeasonList.test.tsx`: Validates season listing + pagination.
+
+> Note: ResizeObserver and TextEncoder are polyfilled in `setupTests.ts`.
+
+---
+
+## 📊 Features
+- Browse all available F1 seasons
+- View detailed race results and driver standings
+- Pin races for easier access (stored in Redux)
+- Interactive bar chart for driver points per race
+- Fully responsive layout with Material UI
+
+---
+
+## ✨ Developed By
+**Nagham Ayman**
+
+For questions or feedback, feel free to reach out!
